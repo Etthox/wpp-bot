@@ -1,0 +1,26 @@
+2023/12/08-11:55:29.702 39f8 Reusing MANIFEST C:\Users\renan\OneDrive\Documents\repositorios_git\wpp-bot-diretores-correto\whatsapp-bot-diretores\userdata\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2023/12/08-11:55:29.703 39f8 Recovering log #1225
+2023/12/08-11:55:29.704 39f8 Reusing old log C:\Users\renan\OneDrive\Documents\repositorios_git\wpp-bot-diretores-correto\whatsapp-bot-diretores\userdata\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/001225.log 
+2023/12/08-11:55:30.477 21a0 Level-0 table #1246: started
+2023/12/08-11:55:30.480 21a0 Level-0 table #1246: 46306 bytes OK
+2023/12/08-11:55:30.481 21a0 Delete type=0 #1225
+2023/12/08-11:55:30.481 1e40 Manual compaction at level-0 from '\x00P\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00Q\x00\x00\x00' @ 0 : 0; will stop at '\x00P\x00\x00\x05' @ 4088525 : 1
+2023/12/08-11:55:30.481 1e40 Compacting 1@0 + 2@1 files
+2023/12/08-11:55:30.484 1e40 Generated table #1247@0: 996 keys, 20175 bytes
+2023/12/08-11:55:30.485 1e40 Generated table #1248@0: 2 keys, 1769 bytes
+2023/12/08-11:55:30.494 1e40 Generated table #1249@0: 5383 keys, 149271 bytes
+2023/12/08-11:55:30.494 1e40 Compacted 1@0 + 2@1 files => 171215 bytes
+2023/12/08-11:55:30.504 1e40 compacted to: files[ 0 3 37 0 0 0 0 ]
+2023/12/08-11:55:30.505 1e40 Delete type=2 #1246
+2023/12/08-11:55:30.505 1e40 Manual compaction at level-0 from '\x00P\x00\x00\x05' @ 4088525 : 1 .. '\x00Q\x00\x00\x00' @ 0 : 0; will stop at (end)
+2023/12/08-11:55:31.315 21a0 Compacting 1@1 + 2@2 files
+2023/12/08-11:55:31.401 21a0 Generated table #1250@1: 46067 keys, 2227588 bytes
+2023/12/08-11:55:31.489 21a0 Generated table #1251@1: 22739 keys, 2180898 bytes
+2023/12/08-11:55:31.490 21a0 Generated table #1252@1: 3 keys, 2733 bytes
+2023/12/08-11:55:31.490 21a0 Compacted 1@1 + 2@2 files => 4411219 bytes
+2023/12/08-11:55:31.491 21a0 compacted to: files[ 0 2 38 0 0 0 0 ]
+2023/12/08-11:55:31.491 21a0 Delete type=2 #1228
+2023/12/08-11:55:31.491 21a0 Delete type=2 #1230
+2023/12/08-11:55:31.491 21a0 Delete type=2 #1231
+2023/12/08-11:55:31.491 21a0 Delete type=2 #1232
+2023/12/08-11:55:31.491 21a0 Delete type=2 #1247
