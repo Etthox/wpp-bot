@@ -1,25 +1,18 @@
 ﻿#import pywhatkit as w
 import enum
+import os
 import re
 import time
 import pandas as pd
 import pyodbc
-import keyboard as k
+
 import json
 from datetime import date, datetime, timedelta
 #from prettytable import PrettyTable
-from bs4 import BeautifulSoup
 import numpy as np
-from termcolor import colored
-from selenium import webdriver
-from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.chrome.service import Service
+import requests
 from enum import Enum
 import time
-from selenium.webdriver.common.by import By
 import pathlib
 import schedule
 import sys
@@ -78,6 +71,57 @@ dataInicio = f"""{today.strftime("%Y-%m-%d")}T{now.strftime("%H:%M:%S")}"""
 #contatos = dataframe resultado contatos
 #contato = contato atual do loop
 #tudo = 
+
+def getToken():
+    url = f"..."
+    header = {
+        'Content-Type': "application/json",
+    }
+    payload = {
+        "cpf": "...",
+        "password": "..."
+    }   
+    res = requests.post(url, data = json.dumps(payload), headers = header)
+    return json.loads(res.content)["authToken"]
+
+
+def sendText(todas_mensagens,contact):
+    try:    
+        header = {
+                'Content-Type': "application/json",
+                'sessionkey': "vista123",
+            }     
+        url = "..."        
+        payload = {  
+                "session" : "...",
+                "number" : "...",
+                "text": "testando api no codigo python",
+                "options": {
+                    "createChat": True,
+                    "delay": 100
+                }
+            }
+        
+        send_text = requests.post(url, data = json.dumps(payload), headers = header)
+
+        return send_text
+
+    except Exception as e:
+        writeLog("Erro:" + e.args[0])
+
+
+def writeLog(logMessage):
+    today = date.today()
+    now = datetime.now()
+
+    logText = f"""{today.strftime("%Y-%m-%d")} {now.strftime("%H:%M:%S")} - {logMessage}""" 
+
+    with open(os.getcwd() + '\\log.txt', 'a') as f:
+        f.write('\n' + logText)
+
+
+
+
 
 totalTarefas = 0
 
@@ -217,21 +261,9 @@ def rotina(test):
         if totalTarefas >0 :
             try:
                 todas_mensagens= mensagemEnvio + mensagemEnvioPec
-                sendLink = f'https://web.whatsapp.com/send?phone={contact}&text={todas_mensagens}'
-                #service = Service('C:\Program Files\Chrome Driver\chromedri    ver.exe')
-                options = webdriver.ChromeOptions()
-
-                #script_directory = pathlib.Path().absolute()
-                options.add_argument("...")
-
-
-                driver = webdriver.Chrome(ChromeDriverManager().install(), chrome_options=options)
-                driver.get(sendLink)
-                time.sleep(90)
-                driver.find_element(By.CSS_SELECTOR, '''span[data-icon='send']''').click()
-                time.sleep(60)
+                sendText(todas_mensagens,contact)
+                #service = Service('C:\Program Files\Chrome Driver\chromedri    ver.exe'
                 print("JOB FINALIZADO")
-                driver.quit()
                 now = datetime.now()
                 dataFim = f"""{today.strftime("%Y-%m-%d")}T{now.strftime("%H:%M:%S")}"""
             except Exception as error:

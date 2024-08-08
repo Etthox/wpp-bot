@@ -5,6 +5,7 @@ import pandas as pd
 import queries
 
 
+
 # ---- PARAMS AND LOG ----
 #Database credentials
 DB_ADDRESS = '...'
